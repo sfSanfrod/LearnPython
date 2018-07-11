@@ -16,3 +16,6 @@ tail：string对象，标识该元素可选的尾字符串
 
 child elements： 标识子节点
 """
+
+if __name__ == "__main__":
+    pass
