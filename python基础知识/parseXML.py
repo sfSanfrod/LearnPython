@@ -64,5 +64,5 @@ if __name__ == "__main__":
         if sub.text=="亚洲":
             country.remove(sub)
             print("删除local")
-
+#保存修改
 tree.write("demo.xml",encoding="utf-8")
