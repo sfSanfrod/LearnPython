@@ -31,6 +31,7 @@ if __name__ == "__main__":
     root = tree.getroot()
     print(root.tag)
     print("==============遍历================")
+    print("遍历根节点：")
     for child in root:
         print(child.tag,"name:",child.attrib["name"])
     print("查找第一个country")
@@ -42,13 +43,26 @@ if __name__ == "__main__":
 
     print("遍历第一个country的子节点")
     for sub in country:
-        print(sub.attrib,sub.text)
+        print(sub.tag,sub.attrib,sub.text)
 
     #遍历子节点
     print("使用iter迭代器查找目标节点")
 
-    print("==============修改================")
-    print("==============新增================")
-    #给tstamp新增一个节点url
+    print("==============新增、修改================")
+    print("新增local节点：")
+    local = ET.Element("local")
+    local.text = "亚洲"
+    country.append(local)
+    for sub in country:
+        if sub.text=="亚洲":
+            print(sub.tag, sub.attrib, sub.text)
+            sub.set("local","非洲")
+            print(sub.tag, sub.attrib, sub.text)
 
     print("==============删除================")
+    for sub in country:
+        if sub.text=="亚洲":
+            country.remove(sub)
+            print("删除local")
+
+tree.write("demo.xml",encoding="utf-8")
