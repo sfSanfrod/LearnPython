@@ -1,33 +1,23 @@
-<?xml version="1.0" encoding="UTF8"?>
-<project name="ant-jmeter-test" default="run" basedir=".">
-	<tstamp>
-		<format property="time" pattern="yyyyMMddhhmm" />
-	</tstamp>
-	<property environment="env" />
-	<property name="ReportName" value="fenqishangchenTestReport" />
-	<property name="SReportName" value="fenqishangchenAutoTestSummaryReport" />
-	<target name="run">
-		<echo message="start..." />
-		<antcall target="clean" />
-		<antcall target="test" />
-		<antcall target="report" />
-		<antcall target="report-summary" />
-	</target>
-	<target name="report-summary">
-		<xslt   
-			classpathref="xslt.classpath"
-              		force="true"
-			in="${jmeter.result.jtlName}" 
-			out="${jmeter.result.htmlName.summary}" 
-			style="${jmeter.home}/extras/jmeter-results-detail-report_21.xsl">
-			<param name="dateReport" expression="${time}"/>
-			<param name="titleReport" expression="fenqishangchen Test Report"/>
-		</xslt>
-		<copy todir="${jmeter.result.dir}">
-			<fileset dir="${jmeter.home}/extras">
-				<include name="collapse.png" />
-				<include name="expand.png" />
-			</fileset>
-		</copy>
-	</target>
-</project>
+<?xml version="1.0"?>
+<data>
+    <country name="England">
+        <rank>1</rank>
+        <year>2008</year>
+        <gdppc>141100</gdppc>
+        <neighbor name="Austria" direction="E"/>
+        <neighbor name="Switzerland" direction="W"/>
+    </country>
+    <country name="Singapore">
+        <rank>4</rank>
+        <year>2011</year>
+        <gdppc>59900</gdppc>
+        <neighbor name="Malaysia" direction="N"/>
+    </country>
+    <country name="Panama">
+        <rank>68</rank>
+        <year>2011</year>
+        <gdppc>13600</gdppc>
+        <neighbor name="Costa Rica" direction="W"/>
+        <neighbor name="Colombia" direction="E"/>
+    </country>
+</data>
