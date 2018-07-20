@@ -5,4 +5,11 @@
 
 __author__ = "小白龙"
 
-from oepnpyxl import Workbook
+from openpyxl import Workbook
+
+if __name__ == "__main__":
+    wb = Workbook()
+    sheet = wb.active
+    sheet['A1'] = "书名"
+
+    wb.save("简单excel写示例.xlsx")
