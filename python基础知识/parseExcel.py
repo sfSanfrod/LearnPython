@@ -13,6 +13,8 @@ import urllib.request
 def writeExcl():
     wb = Workbook()
     sheet1 = wb.active
+    #设置sheet名字
+    sheet1.title = "第一个工作簿"
     sheet1['A1'] = "书名"
     #在尾部添加一行
     sheet1.append([1, 2, 4])
@@ -29,6 +31,12 @@ def readExcel(path):
     print("工作簿：",sheets)
     # 获取要读取的sheet
     ws = wb.get_sheet_by_name(sheets[0])
+
+    #读取单元格的三种方式：
+    print("读取某一单元格的值", ws['A1'].value)
+    # print("读取某一单元格的值", ws.cell('A1'))
+    print("读取某一单元格的值", ws.cell(row=1,column=1))
+
     print("打印表头：")
     for cell in ('A1','B1','C1','D1'):
         if cell == 'D1':
@@ -60,7 +68,7 @@ def readExcel(path):
     print (type(cl))
     print("根据行列值获取单元格:")
     print(ws.cell(row=1,column=2).value)
-    print("读取某一单元格的值",ws['A1'].value)
+
 
 def searchBook():
     url = "https://book.douban.com/j/subject_suggest?q=python"
