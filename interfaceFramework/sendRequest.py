@@ -30,20 +30,24 @@ class SendRequest():
 
 if __name__ == '__main__':
     sentReq = SendRequest()
-    urlStr = r'https://www.baidu.com/home/msg/data/personalcontent?callback=jQuery110209756313901626137_1543412774419&num=8&_req_seqid=&sid=&_=1543412774420'
+    urlStr = r'https://www.baidu.com/home/msg/data/personalcontent'
+    #?=jQuery110209756313901626137_1543412774419&num=8&_req_seqid=&sid=&_=1543412774420
+    params = {"":"jQuery110209756313901626137_1543412774419","num":8,"_req_seqid":"","sid":"","_":"1543412774420"}
+    sentReq.set_params(params)
     sentReq.set_url(urlStr)
     response = sentReq.send_get()
     print(response.headers)
     print(response.cookies)
     print(response.text)
+    print(response.url)
 
     print("=========================")
     url2 = r'http://i.baidu.com/msg/message/get/'
-    data = {'srcid':1,
-            'status':0,
-            'appid':0,
-            'intPage':0,
-            'cuttitle':30}
+    data = {'srcid': 1,
+            'status': 0,
+            'appid': 0,
+            'intPage': 0,
+            'cuttitle': 30}
     sentReq.set_url(url2)
     sentReq.set_data(data)
     response2 = sentReq.send_post()

@@ -89,6 +89,6 @@ def searchBook():
 
 
 if __name__ == "__main__":
-    writeExcl()
+    #writeExcl()
     readExcel("读取Excel示例.xlsx")
-    searchBook()
+    #searchBook()
