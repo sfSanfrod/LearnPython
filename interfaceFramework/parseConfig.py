@@ -3,11 +3,11 @@
 
 import configparser
 
-class readConfig:
+class ReadConfig:
     def __init__(self,filepath):
         self.filepath = filepath
         self.config = configparser.ConfigParser()
-        self.config.read(self.filepath)
+        self.config.read(self.filepath,encoding='utf-8')
 
     def read_option(self,section,name):
         value = self.config.get(section,name)
@@ -21,7 +21,7 @@ class readConfig:
     def is_exit(self,section):  #判断section是否存在
         return (section in self.config)
 
-class writeConfig:
+class WriteConfig:
     def __init__(self,filepath):
         self.filepath = filepath
         self.config = configparser.ConfigParser()
@@ -43,12 +43,12 @@ class writeConfig:
         self.config.write(self.fp)
 
 if __name__ == '__main__':
-    rc = readConfig(r"D:\GitHub\config.ini")
+    rc = ReadConfig(r"D:\GitHub\config.ini")
     host = rc.read_option('DATABASE', 'host')
     items = rc.config.items('DATABASE')
     print(items)
 
-    wc = writeConfig(r"D:\GitHub\config.ini")
+    wc = WriteConfig(r"D:\GitHub\config.ini")
     if ('info' not in wc.config):
         wc.add_section('info')
     wc.add_option('info','name','xiaobialong')
