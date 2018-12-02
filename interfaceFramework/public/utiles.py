@@ -5,6 +5,7 @@ import os
 import xlrd
 
 def read_excel(file,sheet):
+    'read sheet,return a list'
     data = []
     workbook = xlrd.open_workbook(file)
     sheet = workbook.sheet_by_name(sheet)

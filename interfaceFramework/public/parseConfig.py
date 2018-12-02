@@ -2,10 +2,16 @@
 #coding=utf-8
 
 import configparser
+import os
+
+#因为config.ini文件与当前python文件在同一目录下，
+# 所以直接根据当前文件所在目录拼接config文件的路径
+path = os.path.dirname(os.getcwd()) #获取当前文件所在目录的父目录
+configPath = os.path.join(path, "public\config.ini")     #拼接config文件路径
 
 class ReadConfig:
-    def __init__(self,filepath):
-        self.filepath = filepath
+    def __init__(self):
+        self.filepath = configPath
         self.config = configparser.ConfigParser()
         self.config.read(self.filepath,encoding='utf-8')
 
@@ -22,8 +28,8 @@ class ReadConfig:
         return (section in self.config)
 
 class WriteConfig:
-    def __init__(self,filepath):
-        self.filepath = filepath
+    def __init__(self):
+        self.filepath = configPath
         self.config = configparser.ConfigParser()
         self.config.read(self.filepath)
         self.fp = open(self.filepath,'w')
@@ -42,15 +48,28 @@ class WriteConfig:
     def write(self):  #修改配置文件结束后都需要调用改方法写入到配置文件
         self.config.write(self.fp)
 
-if __name__ == '__main__':
-    rc = ReadConfig(r"D:\GitHub\config.ini")
-    host = rc.read_option('DATABASE', 'host')
-    items = rc.config.items('DATABASE')
+def test_read():
+    rc = ReadConfig()
+    host = rc.read_option('file', 'platform_address')
+    items = rc.config.items('file')
     print(items)
-
-    wc = WriteConfig(r"D:\GitHub\config.ini")
-    if ('info' not in wc.config):
-        wc.add_section('info')
-    wc.add_option('info','name','xiaobialong')
-    wc.set_option('info','name','xiaobialong2')
+def test_write():
+    wc = WriteConfig()
+    if ('addsection' not in wc.config):
+        wc.add_section('addsection')
+        wc.add_option('addsection', 'name', 'xiaobialong')
+        wc.set_option('addsection', 'name', 'xiaobialong2')
     wc.write()
+
+if __name__ == '__main__':
+    #test_read()
+    #test_write()
+    from interfaceFramework.public import sendRequest, parseConfig, utiles
+    config = parseConfig.ReadConfig()
+    excel = config.read_option('file', 'platform_address')
+    test_data = utiles.read_excel(excel, '三年一班')
+    print(test_data)
+
+
+
+

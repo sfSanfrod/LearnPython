@@ -3,13 +3,12 @@
 
 import unittest
 import paramunittest
-from interfaceFramework import parseExcel,sendRequest,utiles,parseConfig
+from interfaceFramework.public import sendRequest, parseConfig, utiles
 
 request = sendRequest.SendRequest()
-config = parseConfig.ReadConfig(r"D:\GitHub\LearnPython\interfaceFramework\config.ini")
-excel = config.read_option('file','address')
-print(excel)
-test_data = utiles.read_excel(excel,'三年一班')
+config = parseConfig.ReadConfig()
+excel = config.read_option('file','platform_address')
+test_data = utiles.read_excel(excel, '三年一班')
 
 @paramunittest.parametrized(*test_data)
 class TestCase1(unittest.TestCase):
@@ -22,8 +21,7 @@ class TestCase1(unittest.TestCase):
         self.param2 = param2
 
     def test_Case(self):
-        print("执行测试用例：",self.case_name)
-        print(self.case_name, self.url, self.method)
+        print("执行测试用例：",self.case_name, self.url, self.method)
         urlstr = r"https://www.baidu.com/home/msg/data/personalcontent"
         request.set_url(self.url)
 
@@ -41,6 +39,10 @@ class TestCase1(unittest.TestCase):
         print(response.url)
         print(response.text)
 
+
+
 if __name__ == "__main__":
-    unittest.main()
+    #unittest.main()
+    c = TestCase1()
+    print(c)
 
