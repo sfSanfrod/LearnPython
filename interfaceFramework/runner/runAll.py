@@ -14,8 +14,8 @@ config = parseConfig.ReadConfig()
 
 class RunAll(unittest.TestCase):
     def __init__(self):
-        self.case_path = config.read_option('case','path')
-        str = config.read_option('report','reportPath')
+        self.case_path = config.get_option('case', 'path')
+        str = config.get_option('report', 'reportPath')
         self.report = os.path.join(str,'report.html')
         self.suit = unittest.defaultTestLoader.discover(self.case_path,pattern='test*.py')
     def setUp(self):

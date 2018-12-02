@@ -10,20 +10,29 @@ from interfaceFramework.public import HTMLTestReportCN,parseConfig
 from interfaceFramework.testCase.testCase1 import TestCase1
 
 
-
 config = parseConfig.ReadConfig()
+case_path = config.get_option('case', 'path')
+report_path = config.get_option('report', 'reportPath')
 
 class RunOne(unittest.TestCase):
     def __init__(self):
 
-        str = config.read_option('report','reportPath')
         #name = 'report_'+datetime.datetime.strftime(datetime.datetime.now(),'%Y%m%d%H%M%S')+'.html'
-        self.report = os.path.join(str,'report.html')
-        self.suit = unittest.TestLoader().loadTestsFromTestCase(TestCase1)
-        #self.suit = unittest.TestSuite(TestCase1('test_Case'))
-        self.suit.addTest(TestCase1('test_Case'))
+        self.report = os.path.join(report_path,'report.html')
+        self.case_list = []
+
     def setUp(self):
         pass
+    def read_case_list(self):
+        file = open('./testCaseList.txt')
+        for value in file.readlines():
+            data = str(value)
+            if data != '' and not data.startswith("#"):
+                self.case_list.append(data.replace("\n", ""))
+        file.close()
+        print("需要执行的测试用例集合："+str(self.case_list))
+    def set_case_suite(self):
+        self.suit = []
 
     def run(self):
         fp = open(self.report,'wb')
@@ -37,5 +46,6 @@ class RunOne(unittest.TestCase):
 
 if __name__ == '__main__':
     test = RunOne()
-    print(test.report)
-    test.run()
+    # print(test.report)
+    test.read_case_list()
+

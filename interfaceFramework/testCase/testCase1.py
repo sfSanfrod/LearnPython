@@ -7,7 +7,7 @@ from interfaceFramework.public import sendRequest, parseConfig, utiles
 
 request = sendRequest.SendRequest()
 config = parseConfig.ReadConfig()
-excel = config.read_option('file','platform_address')
+excel = config.get_option('file', 'platform_address')
 test_data = utiles.read_excel(excel, '三年一班')
 
 @paramunittest.parametrized(*test_data)

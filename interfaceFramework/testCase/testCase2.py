@@ -9,7 +9,7 @@ from interfaceFramework.public import sendRequest, parseConfig, utiles
 
 request = sendRequest.SendRequest()
 config = parseConfig.ReadConfig()
-excel2 = config.read_option('file','tenant_address')
+excel2 = config.get_option('file', 'tenant_address')
 test_data2 = utiles.read_excel(excel2, '三年一班')
 
 @paramunittest.parametrized(*test_data2)

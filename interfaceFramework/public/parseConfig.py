@@ -15,13 +15,13 @@ class ReadConfig:
         self.config = configparser.ConfigParser()
         self.config.read(self.filepath,encoding='utf-8')
 
-    def read_option(self,section,name):
+    def get_option(self, section, name):
         value = self.config.get(section,name)
         return value
-    def read_sections(self):
+    def get_sections(self):
         section_list = self.config.sections()
         return section_list
-    def read_items(self,section):
+    def get_items(self, section):
         items_list = self.config.items(section)
         return items_list
     def is_exit(self,section):  #判断section是否存在
@@ -50,7 +50,7 @@ class WriteConfig:
 
 def test_read():
     rc = ReadConfig()
-    host = rc.read_option('file', 'platform_address')
+    host = rc.get_option('file', 'platform_address')
     items = rc.config.items('file')
     print(items)
 def test_write():
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     #test_write()
     from interfaceFramework.public import sendRequest, parseConfig, utiles
     config = parseConfig.ReadConfig()
-    excel = config.read_option('file', 'platform_address')
+    excel = config.get_option('file', 'platform_address')
     test_data = utiles.read_excel(excel, '三年一班')
     print(test_data)
 
