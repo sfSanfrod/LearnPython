@@ -40,9 +40,5 @@ class TestCase1(unittest.TestCase):
         print(response.text)
 
 
-
 if __name__ == "__main__":
-    #unittest.main()
-    c = TestCase1()
-    print(c)
-
+    unittest.main()

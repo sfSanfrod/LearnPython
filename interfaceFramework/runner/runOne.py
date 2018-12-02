@@ -7,7 +7,7 @@ import os
 import unittest
 import datetime
 from interfaceFramework.public import HTMLTestReportCN,parseConfig
-from interfaceFramework.testCase import testCase1
+from interfaceFramework.testCase.testCase1 import TestCase1
 
 
 
@@ -18,10 +18,10 @@ class RunOne(unittest.TestCase):
 
         str = config.read_option('report','reportPath')
         #name = 'report_'+datetime.datetime.strftime(datetime.datetime.now(),'%Y%m%d%H%M%S')+'.html'
-        name = 'report.html'
-        self.report = os.path.join(str,name)
-        suit = unittest.TestLoader().loadTestsFromTestCase(testCase1.TestCase1)
-        self.suit = suit
+        self.report = os.path.join(str,'report.html')
+        self.suit = unittest.TestLoader().loadTestsFromTestCase(TestCase1)
+        #self.suit = unittest.TestSuite(TestCase1('test_Case'))
+        self.suit.addTest(TestCase1('test_Case'))
     def setUp(self):
         pass
 
@@ -36,7 +36,6 @@ class RunOne(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     test = RunOne()
     print(test.report)
     test.run()
