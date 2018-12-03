@@ -16,28 +16,45 @@ report_path = config.get_option('report', 'reportPath')
 
 class RunOne(unittest.TestCase):
     def __init__(self):
-
-        #name = 'report_'+datetime.datetime.strftime(datetime.datetime.now(),'%Y%m%d%H%M%S')+'.html'
-        self.report = os.path.join(report_path,'report.html')
+        self.report_path = config.get_option('report', 'reportPath')
         self.case_list = []
 
     def setUp(self):
         pass
+    #读取testCaseList.txt文件里的测试用例类
     def read_case_list(self):
         file = open('./testCaseList.txt')
         for value in file.readlines():
-            data = str(value)
-            if data != '' and not data.startswith("#"):
-                self.case_list.append(data.replace("\n", ""))
+            case_name = str(value)
+            if case_name != '' and not case_name.startswith("#"):
+                self.case_list.append(case_name.replace("\n", ""))
         file.close()
         print("需要执行的测试用例集合："+str(self.case_list))
+    #将read_case_list()方法读取的测试用例类放到测试集合里
     def set_case_suite(self):
-        self.suit = []
+        self.read_case_list()
+        test_suit = unittest.TestSuite()
+        suit_module = []
+        for case in self.case_list:
+            discover = unittest.defaultTestLoader.discover(case_path,pattern=case,top_level_dir=None)
+            suit_module.append(discover)
+        if len(suit_module)>0:
+            for suit in suit_module:
+                for case in suit:
+                    test_suit.addTest(case)
+
+        else :
+            return None
+        return test_suit
 
     def run(self):
-        fp = open(self.report,'wb')
-        runner = HTMLTestReportCN.HTMLTestRunner(stream=fp,description="接口测试",tester="小白龙")
-        runner.run(self.suit)
+        suit = self.set_case_suite()
+        report_name = "Report_%s.html" % datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d%H%M%S')
+        report = os.path.join(self.report_path, report_name)
+        fp = open(report,'wb')
+        if suit is not None:
+            runner = HTMLTestReportCN.HTMLTestRunner(stream=fp, description="接口测试", tester="小白龙")
+            runner.run(suit)
         fp.close()
 
     def tearDown(self):
@@ -46,6 +63,5 @@ class RunOne(unittest.TestCase):
 
 if __name__ == '__main__':
     test = RunOne()
-    # print(test.report)
-    test.read_case_list()
+    test.run()
 
