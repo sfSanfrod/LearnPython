@@ -12,7 +12,7 @@ if __name__ == '__main__':
     subject = u'python send text mail测试'
     smtpserver = u'smtp.163.com'
     username = u'sunfeng163666@163.com'
-    password = u'ssf5762172'
+    password = u'XXXXXX'
     msg = MIMEText(u'测试邮件正文','text','utf-8')
     print(msg)
     print('================')

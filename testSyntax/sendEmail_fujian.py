@@ -1,36 +1,70 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #coding=utf-8
+
+__author__ = '小白龙'
 
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from email.header import Header
 
-if __name__=='__main__':
-    """测试发送带附件的邮件"""
-    # 准备数据
-    sender = u'sunfeng163666@163.com'
-    reciver = u'sunfeng163666@163.com'
-    subject = u'会议很好邮件8'
-    smtpserver = u'smtp.163.com'
-    username = u'sunfeng163666@163.com'
-    password = u'ssf5762172'
-    #构造附件
-    msg = MIMEMultipart('附件')
-    msg['Subject']=Header(subject,'utf-8')
-    attachment = MIMEText(open(r'D:\testReport.html').read(),'base64',encoding='utf-8') # 读取附件
-    attachment['Content-Type']='application/octet-stream'
-    attachment['Content-Disposition']='attachment;filename="tianqi.html"'
-    msg.attach(attachment)   #关联附件
-    #添加正文
-    text = MIMEText(u'今天的会议非常成功，明天一起出去玩吧', 'plain', 'utf-8')
-    msg.attach(text)
+class SendEmail():
+    def __init__(self):
+        self.msg = None
+        self.smtserver = r'smtp.163.com'
 
-    msg['From']=sender
-    msg['To']=reciver
-    #开始发送邮件
-    smtp = smtplib.SMTP()
-    smtp.connect(smtpserver)
-    smtp.login(username,password)
-    smtp.sendmail(sender,reciver,msg.as_string())
-    smtp.quit()
+        revivers = ['985758828@qq.com','sunfeng163666@163.com']
+        self.reciver = ";".join(revivers)
+        self.sender = 'sunfeng163666@163.com'
+        self.username = r'sunfeng163666@163.com'
+        self.passwd = r'XXXXXX'
+
+    def set_email(self):
+
+        subject = r'InterfaceTestReport发送邮件（正常）'
+
+        #构造附件
+        msg = MIMEMultipart('mixed')
+        msg['Subject'] = subject
+        msg['From'] = self.sender
+        msg['To'] = self.reciver
+        #构造文本
+        text = r'Hi all，' \
+               r'这里是神州项目二期接口测试报告，报告地址：http://www.baidu.com' \
+               r'详情请见附件，谢谢！'
+        text_plain = MIMEText(text,'plain', 'utf-8')
+        msg.attach(text_plain)
+        #构造html
+        html = """
+                <html>  
+                <head></head>  
+                    <body>  
+                        <p>Hi!<br>  
+                        How are you?<br>  
+                        Here is the <a href="http://www.baidu.com">link</a> you wanted.<br> 
+                        </p> 
+                    </body>  
+                </html>  
+                """
+        text_html = MIMEText(html,'html','utf-8')
+        text_html["Content-Disposition"] = 'attachment; filename="texthtml.html"'
+        msg.attach(text_html)
+        #添加文件
+        file = open(r'D:\testReport.html','rb').read()
+        text_file = MIMEText(file,'base64', 'utf-8')
+        text_file['Content-Type'] = 'application/octet-stream'
+        text_file["Content-Disposition"] = 'attachment; filename="report.html"'
+        msg.attach(text_file)
+        self.msg = msg
+
+    def send_email(self):
+        smtp = smtplib.SMTP()
+        smtp.connect(self.smtserver)
+        smtp.login(self.username,self.passwd)
+        smtp.sendmail(self.sender,self.reciver,self.msg.as_string())
+
+if __name__ == '__main__':
+    mail = SendEmail()
+    mail.set_email()
+    mail.send_email()

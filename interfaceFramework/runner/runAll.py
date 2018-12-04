@@ -7,7 +7,7 @@ import os
 import unittest
 import datetime
 # import time
-from interfaceFramework.public import HTMLTestReportCN,parseConfig
+from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
 from interfaceFramework.testCase.testCase1 import TestCase1
 
 
@@ -28,6 +28,10 @@ class RunAll(unittest.TestCase):
         runner = HTMLTestReportCN.HTMLTestRunner(stream=fp,description="接口测试",tester="小白龙")
         runner.run(self.suit)
         fp.close()
+        if config.get_option('email','switch')=='on':
+            mail = sendEmail.SendEmail(report)
+            mail.send_email()
+            print("发送邮件结束")
 
     def tearDown(self):
         pass
