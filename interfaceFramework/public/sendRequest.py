@@ -2,6 +2,9 @@
 #coding=utf-8
 
 import requests
+import os
+from interfaceFramework.public import parseConfig
+config = parseConfig.ReadConfig()
 
 class SendRequest():
     def __init__(self):
@@ -10,6 +13,7 @@ class SendRequest():
         self.url = None
         self.params = {}
         self.data = {}
+        self.file = None
     def set_url(self,url):
         self.url = url
         return self.url
@@ -19,6 +23,9 @@ class SendRequest():
         self.params = params
     def set_data(self,data):
         self.data = data
+    def set_file(self,filename):
+        file_path = os.path.jion(config.get_option('file','file_path'),filename)
+        self.file = {'file':open(file_path,'rb')}
 
     def send_get(self):
         response = requests.get(url=self.url,headers=self.headers,params=self.params)
@@ -26,6 +33,13 @@ class SendRequest():
 
     def send_post(self):
         response = requests.post(url=self.url,headers=self.headers,data=self.data)
+        return response
+
+    def send_post_json(self):
+        response = requests.post(url=self.url,headers=self.headers,json=self.data)
+        return response
+    def send_post_file(self):
+        response = requests.post(url=self.url,headers=self.headers,data=self.data,file=self.file)
         return response
 
 if __name__ == '__main__':
