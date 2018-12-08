@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8582df20-ae55-4fb6-9454-f03707cd3d26" name="Default" comment="add sendEmail">
-      <change afterPath="$PROJECT_DIR$/interfaceFramework/lib/paramunittest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/public/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/public/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/public/utiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/public/utiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/runner/runAll.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/runner/runAll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/runner/testCaseList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/runner/testCaseList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testData/读取Excel示例.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/testData/读取Excel示例.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testData/读取Excel示例2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceFramework/testData/读取Excel示例2.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testReport/Report_20181203214045.html" beforeDir="false" />
-    </list>
+    <list default="true" id="8582df20-ae55-4fb6-9454-f03707cd3d26" name="Default" comment="read" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interfaceFramework/testCase/testQueryById.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="315">
+              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding>
                 <element signature="e#57#72#0" expanded="true" />
               </folding>
@@ -62,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interfaceFramework/public/sendRequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="37" column="22" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="22" />
+            <state relative-caret-position="284">
+              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
               <folding>
                 <element signature="e#37#52#0" expanded="true" />
               </folding>
@@ -392,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543935278416</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="read">
+      <created>1544276166677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544276166677</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -440,11 +437,11 @@
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20444104" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20444104" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1882353" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1882353" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989726" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -511,7 +508,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add sendEmail" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sendEmail" />
+    <MESSAGE value="read" />
+    <option name="LAST_COMMIT_MESSAGE" value="read" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/xml/etree/ElementTree.py" />
@@ -730,16 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interfaceFramework/public/sendRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="22" />
-          <folding>
-            <element signature="e#37#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interfaceFramework/runner/testCaseList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -757,6 +745,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interfaceFramework/public/sendRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding>
+            <element signature="e#37#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interfaceFramework/testCase/testRead.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -769,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interfaceFramework/testCase/testQueryById.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="315">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding>
             <element signature="e#57#72#0" expanded="true" />
           </folding>
