@@ -1,3 +1,4 @@
-testCase1.py
-testCase2.py
-#testCase3.py
+testQueryById.py
+testRead.py
+#testCase1.py
+#testCase2.py
