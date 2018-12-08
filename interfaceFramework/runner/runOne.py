@@ -7,8 +7,6 @@ import os
 import unittest
 import datetime
 from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
-from interfaceFramework.testCase.testCase1 import TestCase1
-
 
 config = parseConfig.ReadConfig()
 case_path = config.get_option('case', 'path')
@@ -36,7 +34,11 @@ class RunOne(unittest.TestCase):
         test_suit = unittest.TestSuite()
         suit_module = []
         for case in self.case_list:
-            discover = unittest.defaultTestLoader.discover(case_path,pattern=case,top_level_dir=None)
+            casename = case.split('/')[-1]
+            path = case_path+'\\'+str(case.split('/')[0])
+            print(casename)
+            print(path)
+            discover = unittest.defaultTestLoader.discover(path,pattern=casename,top_level_dir=None)
             suit_module.append(discover)
         if len(suit_module)>0:
             for suit in suit_module:

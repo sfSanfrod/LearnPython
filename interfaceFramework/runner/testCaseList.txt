@@ -1,4 +1,4 @@
-testQueryById.py
-testRead.py
-#testCase1.py
-#testCase2.py
+user/testQueryById.py
+user/testRead.py
+user/testCase1.py
+user/testCase2.py

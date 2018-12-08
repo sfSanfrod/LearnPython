@@ -18,8 +18,8 @@ class RunAll(unittest.TestCase):
 
     def set_test_suit(self):
         self.suit = unittest.defaultTestLoader.discover(self.case_path, pattern='test*.py',top_level_dir=None)
-        print(self.case_path)
-        print(self.suit)
+        # print(self.case_path)
+        # print(self.suit)
 
 
     def run(self):
