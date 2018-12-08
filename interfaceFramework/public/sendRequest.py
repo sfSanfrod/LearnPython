@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding=utf-8
 
+__author__ = '小白龙'
+
 import requests
 import os
 from interfaceFramework.public import parseConfig

@@ -8,18 +8,16 @@ import unittest
 import datetime
 from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
 
-
 config = parseConfig.ReadConfig()
 
 class RunAll(unittest.TestCase):
     def __init__(self):
-
+        self.case_path = config.get_option('case', 'path')
+        self.report_path = config.get_option('report', 'reportPath')
         self.suit = []
 
     def set_test_suit(self):
-        self.case_path = config.get_option('case', 'path')
-        self.report_path = config.get_option('report', 'reportPath')
-        self.suit = unittest.defaultTestLoader.discover(self.case_path, pattern='test*.py')
+        self.suit = unittest.defaultTestLoader.discover(self.case_path, pattern='test*.py',top_level_dir=None)
         print(self.case_path)
         print(self.suit)
 
