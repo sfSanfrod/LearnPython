@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8582df20-ae55-4fb6-9454-f03707cd3d26" name="Default" comment="add sendEmail">
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/public/config2.ini" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testAddCuiji.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testAssetModify.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testAssistApply.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCaseAllot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCaseImport.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testGoAllot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testMarkCase.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testQueryLoanByCase.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testUserQuery.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/LearnPython.iml" afterPath="$PROJECT_DIR$/.idea/LearnPython.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="8582df20-ae55-4fb6-9454-f03707cd3d26" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/public/config.ini" afterPath="$PROJECT_DIR$/interfaceFramework/public/config.ini" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/public/parseConfig.py" afterPath="$PROJECT_DIR$/interfaceFramework/public/parseConfig.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/public/sendRequest.py" afterPath="$PROJECT_DIR$/interfaceFramework/public/sendRequest.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/runner/runOne.py" afterPath="$PROJECT_DIR$/interfaceFramework/runner/runOne.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/runner/testCaseList.txt" afterPath="$PROJECT_DIR$/interfaceFramework/runner/testCaseList.txt" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCase1.py" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCase1.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCase2.py" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testCase2.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testCase/user/testQueryById.py" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testQueryById.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testCase/user/testRead.py" afterPath="$PROJECT_DIR$/interfaceFramework/testCase/user/testRead.py" />
-      <change beforePath="$PROJECT_DIR$/interfaceFramework/testData/edgeUser.xlsx" afterPath="$PROJECT_DIR$/interfaceFramework/testData/edgeUser.xlsx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -223,31 +201,6 @@
               <item name="LearnPython" type="462c0819:PsiDirectoryNode" />
               <item name="interfaceFramework" type="462c0819:PsiDirectoryNode" />
               <item name="runner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LearnPython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnPython" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaceFramework" type="462c0819:PsiDirectoryNode" />
-              <item name="testCase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LearnPython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnPython" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaceFramework" type="462c0819:PsiDirectoryNode" />
-              <item name="testCase" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LearnPython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnPython" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaceFramework" type="462c0819:PsiDirectoryNode" />
-              <item name="testData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LearnPython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnPython" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaceFramework" type="462c0819:PsiDirectoryNode" />
-              <item name="testReport" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -456,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543935278416</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add testcase">
+      <created>1544349560659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544349560659</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -561,7 +521,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add sendEmail" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sendEmail" />
+    <MESSAGE value="add testcase" />
+    <option name="LAST_COMMIT_MESSAGE" value="add testcase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
