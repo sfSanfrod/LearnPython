@@ -14,7 +14,7 @@ test_data = utiles.read_excel(excel, 'read')
 
 @paramunittest.parametrized(*test_data)
 class Read(unittest.TestCase):
-
+    """阅读消息接口"""
     def setParameters(self, case_name, url, method, msg_id, code, message):
         self.host = config.get_option('host', 'edgeUser')
         self.case_name = case_name
@@ -27,6 +27,7 @@ class Read(unittest.TestCase):
 
     def test_query(self):
         print("执行测试用例：", self.case_name, self.url, self.method)
+        print('请求header：', self.header)
         request.set_url(self.url)
 
         if self.method == 'get':
@@ -41,13 +42,12 @@ class Read(unittest.TestCase):
             response = request.send_post_json()
         else:
             print("method error")
-        # print(self.header)
-        # print(response.url)
-        # print(response.text)
-        # print(response.status_code)
+
+        print('返回code：', response.status_code)
+        print('返回body：', response.text)
         self.assertEqual(response.status_code, self.expect_code)
-        self.assertIn(self.expect_msg, response.text, '错误')
+        self.assertIn(self.expect_msg, response.text, '预期信息不在返回值内')
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)

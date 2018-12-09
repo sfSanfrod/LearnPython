@@ -26,8 +26,8 @@ class SendRequest():
     def set_data(self,data):
         self.data = data
     def set_file(self,filename):
-        file_path = os.path.jion(config.get_option('file','file_path'),filename)
-        self.file = {'file':open(file_path,'rb')}
+        self.file_path = os.path.join(config.get_option('file','file_path'),filename)
+        self.files = {'file':open(self.file_path,'rb')}
 
     def send_get(self):
         response = requests.get(url=self.url,headers=self.headers,params=self.params)
@@ -40,8 +40,9 @@ class SendRequest():
     def send_post_json(self):
         response = requests.post(url=self.url,headers=self.headers,json=self.data)
         return response
-    def send_post_file(self):
-        response = requests.post(url=self.url,headers=self.headers,data=self.data,file=self.file)
+    def send_post_file(self,payload):
+        # response = requests.post(url=self.url,headers=self.headers,files=self.files)
+        response = requests.post(url=self.url,headers=self.headers,data=payload)
         return response
 
 if __name__ == '__main__':

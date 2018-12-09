@@ -8,8 +8,9 @@ import os
 
 #因为config.ini文件与当前python文件在同一目录下，
 # 所以直接根据当前文件所在目录拼接config文件的路径
-path = os.path.dirname(os.getcwd()) #获取当前文件所在目录的父目录
-configPath = os.path.join(path, "public\config.ini")     #拼接config文件路径
+# path = os.path.dirname(os.getcwd()) #获取当前文件所在目录的父目录
+# configPath = os.path.join(path, "public\config.ini")     #拼接config文件路径
+configPath = r'D:\GitHub\LearnPython\interfaceFramework\public\config.ini'
 
 class ReadConfig:
     def __init__(self):

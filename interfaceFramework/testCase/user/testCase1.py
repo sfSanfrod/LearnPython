@@ -2,7 +2,7 @@
 #coding=utf-8
 
 import unittest
-import paramunittest
+from interfaceFramework.lib import paramunittest
 from interfaceFramework.public import sendRequest, parseConfig, utiles
 
 request = sendRequest.SendRequest()

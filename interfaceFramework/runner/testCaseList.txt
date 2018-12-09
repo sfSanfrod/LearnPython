@@ -1,4 +1,13 @@
 user/testQueryById.py
 user/testRead.py
-user/testCase1.py
-user/testCase2.py
+user/testUserQuery.py
+user/testCaseAllot.py
+user/testAssistApply.py
+user/testMarkCase.py
+user/testQueryLoanByCase.py
+user/testAssetModify.py
+user/testGoAllot.py
+user/testAddCuiji.py
+#user/testCaseImport.py
+#user/testCase1.py
+#user/testCase2.py

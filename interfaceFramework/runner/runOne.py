@@ -9,7 +9,8 @@ import datetime
 from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
 
 config = parseConfig.ReadConfig()
-case_path = config.get_option('case', 'path')
+# case_path = config.get_option('case', 'path')
+case_path = r'D:\GitHub\LearnPython\interfaceFramework\testCase'
 report_path = config.get_option('report', 'reportPath')
 
 class RunOne(unittest.TestCase):
