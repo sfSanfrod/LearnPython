@@ -6,7 +6,8 @@ __author__ = '小白龙'
 import os
 import unittest
 import datetime
-from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
+from interfaceFramework.public import parseConfig,sendEmail
+from interfaceFramework.lib import HTMLTestReportCN
 
 config = parseConfig.ReadConfig()
 # case_path = config.get_option('case', 'path')

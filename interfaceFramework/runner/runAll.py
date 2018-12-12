@@ -6,7 +6,8 @@ __author__ = '小白龙'
 import os
 import unittest
 import datetime
-from interfaceFramework.public import HTMLTestReportCN,parseConfig,sendEmail
+from interfaceFramework.public import parseConfig,sendEmail
+from interfaceFramework.lib import HTMLTestReportCN
 
 config = parseConfig.ReadConfig()
 
@@ -27,7 +28,7 @@ class RunAll(unittest.TestCase):
         report_name = "Report_%s.html" % datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d%H%M%S')
         report = os.path.join(self.report_path, report_name)
         fp = open(report,'wb')
-        runner = HTMLTestReportCN.HTMLTestRunner(stream=fp,description="接口测试",tester="小白龙")
+        runner = HTMLTestReportCN.HTMLTestRunner(stream=fp, description="接口测试", tester="小白龙")
         runner.run(self.suit)
         fp.close()
         if config.get_option('email','switch')=='on':
